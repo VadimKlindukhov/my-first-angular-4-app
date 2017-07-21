@@ -1,0 +1,42 @@
+.content-box {
+  margin-bottom: 15px;
+}
+
+.content-caption {
+  float: left;
+  width: 30%;
+}
+
+.content-data {
+
+}
+
+input {
+  width: 70%;
+}
+
+textarea {
+  width: 70%;
+  min-height: 58px;
+  max-height: 118px;
+}
+
+.form-control input {
+  width: 120px;
+}
+
+.ng-invalid {
+  border-color: red;
+}
+
+.input-group {
+  width: 157px;
+}
+
+.form-group {
+  display: inline-flex;
+}
+
+.date-label {
+  padding: 5px 10px 0px 10px;
+}

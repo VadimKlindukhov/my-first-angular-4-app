@@ -1,0 +1,117 @@
+<p>
+  step1 works!
+</p>
+<app-date-time-picker [(ngModel)]="ptr.date" name="mydp"></app-date-time-picker>
+{{ptr.date | json}}
+{{1 +1}}
+<input class="form-control form-date" placeholder="yyyy-mm-dd"
+       name="enqstart" [(ngModel)]="ptr.enquiryPeriod.start" ngbDatepicker #enqstartd="ngbDatepicker" required>
+<form name="myForm" #myForm="ngForm">
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">Название закупки</label>
+    </div>
+    <div class=content-data>
+      <input type="text" class="form-control" [(ngModel)]="ptr.name" name="name" appMyValidator required>
+    </div>
+  </div>
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">Описание закупки</label>
+    </div>
+    <div class=content-data>
+      <textarea type="text" class="form-control" [(ngModel)]="ptr.desc" name="desc"></textarea>
+    </div>
+  </div>
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">Общый классификатор</label>
+    </div>
+    <div class=content-data>
+      <input type="text" class="form-control" [(ngModel)]="ptr.classification" name="classification">
+    </div>
+  </div>
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">Период уточнений</label>
+    </div>
+    <div class=content-data>
+      <div class="form-group">
+        <span class="date-label">С</span>
+        <div class="input-group">
+          <input class="form-control form-date" placeholder="yyyy-mm-dd"
+                 name="enqstart" [(ngModel)]="ptr.enquiryPeriod.start" ngbDatepicker #enqstartd="ngbDatepicker" required>
+          <div class="input-group-addon" (click)="enqstartd.toggle()" >
+            <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+        <span class="date-label">По</span>
+        <div class="input-group">
+          <input class="form-control form-date" placeholder="yyyy-mm-dd"
+                 name="enqend" [(ngModel)]="ptr.enquiryPeriod.end" ngbDatepicker #enqendd="ngbDatepicker" required>
+          <div class="input-group-addon" (click)="enqendd.toggle()" >
+            <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">Период предложений</label>
+    </div>
+    <div class=content-data>
+      <div class="form-group">
+        <span class="date-label">С</span>
+        <div class="input-group">
+          <input class="form-control form-date" placeholder="yyyy-mm-dd"
+                 name="tendstart" [(ngModel)]="ptr.tenderPeriod.start" ngbDatepicker #tendstartd="ngbDatepicker" required>
+          <div class="input-group-addon" (click)="tendstartd.toggle()" >
+            <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+        <span class="date-label">По</span>
+        <div class="input-group">
+          <input class="form-control form-date" placeholder="yyyy-mm-dd"
+                 name="tendend" [(ngModel)]="ptr.tenderPeriod.end" ngbDatepicker #tendendd="ngbDatepicker" required>
+          <div class="input-group-addon" (click)="tendendd.toggle()" >
+            <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=content-box>
+    <div class=content-caption>
+      <label class="control-label">My Dropdown</label>
+    </div>
+    <div class=content-data>
+      <div ngbDropdown class="d-inline-block" #myDrop="ngbDropdown">
+        <input class="form-control" name="drop" id="dropdownBasic1" [(ngModel)]="ptr.drop" ngbDropdownToggle>
+        <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item" *ngFor="let item of [1, 2, 3, 4]" (click)="ptr.drop = item">{{item}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button appLogable message-id="123" (click)="clickMe(myForm)">dfdf</button>
+</form>
+
+{{window.myVar}}
+{{ptr.f?.f}}
+<div *ngIf="ptr">inner</div>
+<button (click)="value=1">select - 1</button>
+  <button (click)="value=2">select - 2</button>
+  <button (click)="value=3">select - 3</button>
+  <h5 appHightLight myHighlight='green'>You selected : {{value}}</h5>
+<div [ngSwitch]="value">
+     <div *ngSwitchCase="1">1. Template - <b>{{value}}</b> </div>
+     <div *ngSwitchCase="2">2. Template - <b>{{value}}</b> </div>
+     <div *ngSwitchCase="3">3. Template - <b>{{value}}</b> </div>
+     <div *ngSwitchDefault>Default Template</div>
+</div>
+<button (click)="myCondition = myCondition? false : true">change condition</button>
+<div *ngIf="myCondition; then first; else second">это ты не увидишь</div>
+<ng-template #first>first block</ng-template>
+<ng-template #second>second block</ng-template>

@@ -1,0 +1,7 @@
+<div>
+  <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" [(ngModel)]="date" (click)="d.toggle()" ngbDatepicker #d="ngbDatepicker">
+  <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+  {{date | json}}
+  {{time | json}}
+</div>

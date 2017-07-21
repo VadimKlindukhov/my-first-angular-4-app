@@ -1,0 +1,8 @@
+<p>
+  step2 works!
+</p>
+<form [formGroup]="step2group">
+  <input id="name" class="form-control" formControlName="name" [(ngModel)]="ptr.name" required>
+  {{ptr | json}}
+  <button (click)="myClick()">click</button>
+</form>
