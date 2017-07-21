@@ -1,3 +1,14 @@
+мой первый проект на Ангуляр 4, тут сможешь найти много моих попыток разобраться в компонентах и их взаимодействии, многие из них удачные.
+в проекте много говнокода, но всё билдится и запускается.
+ 
+# Требования
+
+NodeJS v. 6.9+
+NPM v. 3+
+
+скачать NodeJS и NPM можно по [ссылке](https://nodejs.org/en/)
+ 
+ 
 # TendersApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
